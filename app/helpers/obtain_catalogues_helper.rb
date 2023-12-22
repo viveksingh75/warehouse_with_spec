@@ -1,0 +1,2 @@
+module ObtainCataloguesHelper
+end

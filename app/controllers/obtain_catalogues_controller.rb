@@ -1,0 +1,2 @@
+class ObtainCataloguesController < ApplicationController
+end

@@ -1,0 +1,35 @@
+<%= render '/navbar' %>
+<div class="main">
+<div class="first">
+
+<h1>All Coupons </h1>
+<% @coupons.each do |coupon| %>
+    <%= coupon.id %> 
+    <%= coupon.name %>    
+    <%= coupon.discount %>       
+    <%= coupon.coupon_code %>
+    <%= coupon.start_date %>
+    <%= coupon.end_date %>                 
+  <br><%end%> 
+</div>
+<div class="first">
+  <h1>obtained coupon</h1>
+  <% @coupons_obtained_by_account.each do |obtained_coupon| %>
+    <%= obtained_coupon.id %> 
+      <%= obtained_coupon.id %>    
+      
+      <%= link_to "Delete", obtain_coupon_path(obtained_coupon), class: "btn btn-danger btn-sm", data: { turbo_method: :delete, turbo_confirm: "are you sure?" } %>
+      <br>
+  <% end %>
+  </div>
+  <div class="first">
+  <h1>obtained catalogue</h1>
+  <% @coupons_obtained_by_account.each do |obtained_coupon| %>
+  <%= obtained_coupon.catalogue.name %> 
+  <%end%>
+</div>
+  </div>
+  <div class="create-button">
+    <%= link_to 'new obtain coupon', new_obtain_coupon_path, class: 'btn btn-primary' %>
+  </div>
+</div>

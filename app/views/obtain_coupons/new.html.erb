@@ -1,0 +1,20 @@
+<%# <%= form_with(model: [:obtain_coupons, @new_coupons], local: true) do |form| %> 
+<%= form_with(model: @obtain_coupon, url: obtain_coupons_path, local: true) do |form| %>
+  <div>
+    <div>
+      <%= form.label :coupon_id, 'Select Coupon:' %>
+      <%= form.collection_select :coupon_id, Coupon.all, :id, :name, prompt: 'Select a coupon' %>
+    </div>
+     <div>
+      <%= form.label :catalogue_id, 'Select Catalogue:' %>
+      <%= form.collection_select :catalogue_id, Catalogue.all, :id, :name, prompt: 'Select a catalogue' %>
+    </div>
+
+    <div>
+      <%= form.label :account_id, 'Account ID (hidden):' %>
+      <%= form.hidden_field :account_id, value: current_account.id %>
+    </div>
+  </div>
+
+  <%= form.submit 'Submit' %>
+<% end %>

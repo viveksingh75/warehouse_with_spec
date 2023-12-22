@@ -1,0 +1,15 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  coupon_code: MyString
+  discount: 1
+  start_date: 2023-12-15
+  end_date: 2023-12-15
+
+two:
+  name: MyString
+  coupon_code: MyString
+  discount: 1
+  start_date: 2023-12-15
+  end_date: 2023-12-15
